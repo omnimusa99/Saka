@@ -1,65 +1,19 @@
-/* Aturan dasar untuk body */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Styling untuk header */
-header {
-    background-color: #007bff;
-    color: white;
-    padding: 20px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Styling untuk main content */
-main {
-    padding: 40px 20px;
-    text-align: center;
-    flex-grow: 1;
-}
-
-/* Styling untuk pesan */
-#pesan {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-/* Styling untuk tombol */
-#tombolUbahPesan {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-#tombolUbahPesan:hover {
-    background-color: #218838;
-}
-
-/* Styling untuk footer */
-footer {
-    width: 100%;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: auto; /* Memastikan footer ada di bagian bawah */
-}
+// Menunggu hingga seluruh dokumen HTML selesai dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Ambil elemen tombol berdasarkan ID
+    const tombol = document.getElementById('tombolUbahPesan');
+    
+    // 2. Ambil elemen paragraf pesan berdasarkan ID
+    const pesanElement = document.getElementById('pesan');
+    
+    // 3. Tambahkan event listener (pendengar event) ke tombol
+    // Saat tombol di-klik, fungsi anonim di dalamnya akan dijalankan
+    tombol.addEventListener('click', function() {
+        // 4. Ubah isi teks dari elemen pesan
+        pesanElement.textContent = 'Pesan telah diubah oleh JavaScript! Anda berhasil mengklik tombol.';
+        
+        // 5. Ubah warna tombol secara dinamis (opsional)
+        tombol.style.backgroundColor = '#dc3545';
+        tombol.textContent = 'Sudah Diklik!';
+    });
+});
